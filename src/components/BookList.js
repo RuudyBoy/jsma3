@@ -40,7 +40,8 @@ function BookList() {
 		<div className="books">
 			{books.map(function (book) {
 				const { id, title, published } = book;
-				return <BookItem key={id} id={id} title={title} published={published} />;
+				console.log({ id, title, published });
+				return <BookItem key={id} id={id} title={title.rendered} published={published} />;
 			})}
 		</div>
 	);

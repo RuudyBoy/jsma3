@@ -12,12 +12,8 @@ function App() {
 				</nav>
 
 				<Switch>
-					<Route path="/" exact>
-						<BookList />
-					</Route>
-					<Route path="/detail/:id">
-						<BookDetail />
-					</Route>
+				<Route path='/' exact component={BookList} />
+				<Route path='/detail/:id' component={BookDetail} />
 				</Switch>
 			</div>
 		</Router>
