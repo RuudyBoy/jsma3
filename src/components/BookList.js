@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import BookItem from "./BookItem";
-import { BASE_URL } from "../constants/api";
+import { API } from "../constants/api";
 
 function BookList() {
 	const [books, setBooks] = useState([]);
@@ -10,7 +10,7 @@ function BookList() {
 	useEffect(function () {
 		async function fetchData() {
 			try {
-				const response = await fetch(BASE_URL);
+				const response = await fetch(API);
 
 				if (response.ok) {
 					const json = await response.json();

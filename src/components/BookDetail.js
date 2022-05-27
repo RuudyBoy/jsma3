@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { BASE_URL } from "../constants/api";
+import { useParams, useHistory } from "react-router-dom";
+import { API } from "../constants/api";
 
 function BookDetail() {
 	const [book, setBook] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	let history = useNavigate();
+	let history = useHistory();
 
 	const { id } = useParams();
 
@@ -15,7 +15,7 @@ function BookDetail() {
 		history.push("/");
 	}
 
-	const url = BASE_URL + "/" + id;
+	const url = API + "/" + id;
 
 	useEffect(
 		function () {
