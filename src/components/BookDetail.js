@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { API } from "../constants/api";
+import { BASE_URL } from "../constants/api";
 
 function BookDetail() {
 	const [book, setBook] = useState(null);
@@ -15,7 +15,7 @@ function BookDetail() {
 		history.push("/");
 	}
 
-	const url = API + "/" + id;
+	const url = BASE_URL + "/" + id;
 
 	useEffect(
 		function () {
