@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { BASE_URL } from "../constants/api";
 
-function BookDetail() {
-	const [book, setBook] = useState(null);
+function SportDetail() {
+	const [sport, setSport] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
@@ -26,7 +26,7 @@ function BookDetail() {
 					if (response.ok) {
 						const json = await response.json();
 						console.log(json);
-						setBook(json);
+						setSport(json);
 					} else {
 						setError("An error occured");
 					}
@@ -48,14 +48,15 @@ function BookDetail() {
 	if (error) {
 		return <div>An error occured: {error}</div>;
 	}
-
+	
 	return (
-		<div className="book-detail">
-			<h1>{book.title.rendered}</h1>
-			<p>{book.excerpt.rendered}</p>
-			<p>{book.date}</p>
+		
+		<div className="sport-detail">
+			<h1>{sport.title.rendered}</h1>
+			<p dangerouslySetInnerHTML={{__html: sport.excerpt.rendered}} />
+			<p>{sport.date}</p>
 		</div>
 	);
 }
 
-export default BookDetail;
+export default SportDetail;

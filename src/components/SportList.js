@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import BookItem from "./BookItem";
+import SportItem from "./SportItem";
 import { BASE_URL } from "../constants/api";
 
-function BookList() {
-	const [books, setBooks] = useState([]);
+function SportList() {
+	const [sports, setSports] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
@@ -15,7 +15,7 @@ function BookList() {
 				if (response.ok) {
 					const json = await response.json();
 					console.log(json);
-					setBooks(json);
+					setSports(json);
 				} else {
 					setError("An error occured");
 				}
@@ -37,14 +37,13 @@ function BookList() {
 	}
 
 	return (
-		<div className="books">
-			{books.map(function (book) {
-				const { id, title, published } = book;
-				console.log({ id, title, published });
-				return <BookItem key={id} id={id} title={title.rendered} published={published} />;
+		<div className="sports">
+			{sports.map(function (sport) {
+				const { id, title, published } = sport;
+				return <SportItem key={id} id={id} title={title.rendered} published={published} />;
 			})}
 		</div>
 	);
 }
 
-export default BookList;
+export default SportList;

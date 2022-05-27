@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import BookList from "./components/BookList";
-import BookDetail from "./components/BookDetail";
+import SportList from "./components/SportList";
+import SportDetail from "./components/SportDetail";
 import "./App.css";
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
 				</nav>
 
 				<Switch>
-				<Route path='/' exact component={BookList} />
-				<Route path='/detail/:id' component={BookDetail} />
+				<Route path='/' exact component={SportList} />
+				<Route path='/detail/:id' component={SportDetail} />
 				</Switch>
 			</div>
 		</Router>
