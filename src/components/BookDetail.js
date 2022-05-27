@@ -52,6 +52,8 @@ function BookDetail() {
 	return (
 		<div className="book-detail">
 			<h1>{book.title.rendered}</h1>
+			<p>{book.id}</p>
+			<p>{book.date}</p>
 		</div>
 	);
 }
